@@ -1,0 +1,30 @@
+<%- include("header.ejs") -%>
+
+    <main>
+        <!-- Si on a des données, elles sont affichées ici -->
+        <% if (donnees.length) { %>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                </tr>
+                <% for(var i=0; i<donnees.length; i++) { %>
+                <tr>
+                    <td><%= donnees[i].id %></td>
+                    <td><%= donnees[i].nom %></td>
+                    <td><%= donnees[i].message %></td>
+                    <td><%= donnees[i].datemessage %></td>
+                </tr>
+                <% } %>
+            </table>
+        <% } %>
+
+        <!-- Si on n'a pas de données, on le signale ici -->
+        <% if (!donnees.length) { %>
+            <p>Pas de données actuellement !</p>
+        <% } %>
+    </main>
+
+<%- include("footer.ejs") -%>
